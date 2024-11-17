@@ -10,5 +10,37 @@
   4. AES operates on a 4 × 4 column-major order array of bytes, termed the state
 
 ## PROGRAM: 
+```
+#include <stdio.h>
+#include <string.h>
+
+void xor_encrypt_decrypt(char *input, char *key) 
+{
+    int input_len = strlen(input);
+    int key_len = strlen(key);
+    for (int i = 0; i < input_len; i++) 
+    {
+        input[i] = input[i] ^ key[i % key_len];
+    }
+}
+
+int main() 
+{
+    printf("***ADVANCED ENCRYPTION STANDARD DES ALGORITHM***\n\n");
+    char url[] = "KEERTHIVASAN S";
+    char key[] = "secretkey"; 
+    printf("Original text: %s\n", url);
+    xor_encrypt_decrypt(url, key);
+    printf("Encrypted text: %s\n", url);
+    xor_encrypt_decrypt(url, key);
+    printf("Decrypted text: %s\n", url);
+    return 0;
+}
+```
 ## OUTPUT:
+
+
+![Screenshot 2024-11-17 105118](https://github.com/user-attachments/assets/4484f00b-c6e0-487b-bd18-89533cfc7155)
+
 ## RESULT: 
+Hence to use Advanced Encryption Standard (AES) Algorithm for a practical application like URL Encryption.
